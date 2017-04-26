@@ -3,18 +3,18 @@ module TicTacToe
     module Marker
       class Base
 
-        attr_reader :collor, :raw_marker, :marker
+        attr_reader :collor, :raw_value, :value
 
-        def initialize(collor, raw_marker)
+        def initialize(collor, raw_value)
           @collor = collor
-          @raw_marker = raw_marker
-          @marker = build_marker
+          @raw_value = raw_value
+          @value = build_value
         end
 
         private
 
-          def build_marker
-            marker = "#{collor}#{raw_marker}\e[m"
+          def build_value
+            value = "#{collor}#{raw_value}\e[m"
           end
 
       end

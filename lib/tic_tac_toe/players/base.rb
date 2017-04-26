@@ -2,19 +2,19 @@ module TicTacToe
   module Player
     class Base
 
-      attr_reader :type, :piece
+      attr_reader :type, :marker
 
-      def initialize(type, piece)
+      def initialize(type, marker)
         @type = type
-        @piece = piece
+        @marker = marker
       end
 
       def raw_name
-        name = "#{type} #{piece.raw_marker}"
+        name = "#{type} #{marker.raw_value}"
       end
 
       def name
-        name = "#{piece.collor}#{raw_name}\e[m"
+        name = "#{marker.collor}#{raw_name}\e[m"
       end
 
     end

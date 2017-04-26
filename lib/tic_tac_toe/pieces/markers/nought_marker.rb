@@ -6,7 +6,7 @@ module TicTacToe
       class NoughtMarker < TicTacToe::Piece::Marker::Base
 
         def initialize
-          super(build_collor, build_raw_marker)
+          super(build_collor, build_raw_value)
         end
 
         private
@@ -15,7 +15,7 @@ module TicTacToe
             "\e[0;34m"
           end
 
-          def build_raw_marker
+          def build_raw_value
             'O'
           end
 

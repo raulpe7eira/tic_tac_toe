@@ -4,8 +4,8 @@ module TicTacToe
   module Player
     class ComputerPlayer < TicTacToe::Player::Base
 
-      def initialize(piece)
-        super('Computer', piece)
+      def initialize(marker)
+        super('Computer', marker)
       end
 
       def run_turn(board, rival_player, level)
@@ -29,7 +29,7 @@ module TicTacToe
 
         def try_win_rival(available_spaces, board)
           available_spaces.each do |available_space|
-            board.set_cell_value(available_space.to_s, self.piece.marker)
+            board.set_cell_value(available_space.to_s, self.marker.value)
             if board.had_winner?
               puts "\e[1;30m[\e[m#{available_space}\e[1;30m]\e[m"
               return true
@@ -41,9 +41,9 @@ module TicTacToe
 
         def block_rival_win(available_spaces, board, rival_player)
           available_spaces.each do |available_space|
-            board.set_cell_value(available_space.to_s, rival_player.piece.marker)
+            board.set_cell_value(available_space.to_s, rival_player.marker.value)
             if board.had_winner?
-              board.set_cell_value(available_space.to_s, self.piece.marker)
+              board.set_cell_value(available_space.to_s, self.marker.value)
               puts "\e[1;30m[\e[m#{available_space}\e[1;30m]\e[m"
               return true
             end
@@ -54,7 +54,7 @@ module TicTacToe
 
         def choose_best_spot(available_spaces, board)
           best_spot = board.is_center_available? ? board.get_center_spot : available_spaces.sample.to_s
-          board.set_cell_value(best_spot, self.piece.marker)
+          board.set_cell_value(best_spot, self.marker.value)
           puts "\e[1;30m[\e[m#{best_spot}\e[1;30m]\e[m"
         end
 

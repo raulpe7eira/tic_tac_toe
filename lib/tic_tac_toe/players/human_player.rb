@@ -4,8 +4,8 @@ module TicTacToe
   module Player
     class HumanPlayer < TicTacToe::Player::Base
 
-      def initialize(piece)
-        super('Human', piece)
+      def initialize(marker)
+        super('Human', marker)
       end
 
       def run_turn(board, rival_player = nil, level = nil)
@@ -20,7 +20,7 @@ module TicTacToe
           break if spot
         end
 
-        board.set_cell_value(spot, self.piece.marker)
+        board.set_cell_value(spot, self.marker.value)
       end
 
     end
