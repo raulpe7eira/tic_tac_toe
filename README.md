@@ -1,25 +1,68 @@
-# Desafio da Pluga
+# Tic-Tac-Toe (vlab for [https://pluga.co/](https://pluga.co/))
 
-Nós da Pluga nos orgulhamos do nosso time e queremos sempre boas pessoas que acrescentem. Por isso gostamos de testar nossos candidatos.
+Um pequeno projeto para testar minhas habilidades.
 
-Esse é um desafio que queremos que você supere. Iremos julgar pelos critérios: Mantunção do código, legibilidade, separação de responsabilidades e expressividade dos nomes.
+![frontend-scshot](../master/scshot/frontend-scshot.png)
 
-O arquivo game.rb é o clássico jogo da velha. Contudo, o código está uma bagunça e há vários problemas que podem ser melhorados como:
- 
- - O tratamento de entradas não válidas é ruim;
- - E há muito mais o que deixa a desejar, como a falta de mensagens interativas com os jogadores.
+## Instalação
 
- Também gostaríamos de acrescentar algumas funcionalidades novas como:
+### Pré-requisitos
 
- - Permitir que o jogador escolha o nível de dificuldade (hoje está sempre no difícil (hard));
- - E permitir que fosse possível a escolha de tipos de jogos diferentes (humano vs. humano, computador vs. computado e humando vs. computador)
+Ter instalado localmente (apenas p/ Desenvolvimento e Teste):
+- [Git](https://git-scm.com/)
+- [Ruby](https://ruby-lang.org)
+- [Bundle](http://bundler.io/)
+- [RubyGems](https://rubygems.org/)
 
- Você consegue nos ajudar a finalizar o jogo?
+### Instalando dependências
 
- Importante:
+```bash
+$ git clone https://github.com/raulpereira/tic_tac_toe.git
+$ cd tic_tac_toe
+$ bundle install
+```
 
- - Você terá 1 semana para fazer o máximo que puder. Sabemos que o tempo é curto e muito difícil de fazer tudo. Mas faça o máximo que conseguir;
- - Após o término nos envie o link do repositório do Github.
+## Subir & Rodar
 
+### Ambiente de desenvolvimento
 
- Obrigado e boa sorte! :)
+```bash
+$ ruby -ILib bin/console
+```
+![dsv-scshot](../master/scshot/dsv-scshot.png)
+
+### Ambiente de teste
+
+```bash
+$ rspec
+```
+
+![tst-scshot](../master/scshot/tst-scshot.png)
+
+### Ambiente de produção
+
+`Os testes precisam ser finalizados para geração de uma gem pública` :disappointed_relieved:
+
+## Considerações
+
+### Linguagem
+
+**[Ruby](https://ruby-lang.org)**: Foi uma escolha determinada pelo desafio, decidi encarar mesmo tendo pouca domínio com essa linguagem e mais uma vez tive boas surpresas no estudo de caso.
+
+### Estrutura
+
+**[RubyGems](https://rubygems.org/)**: A primeira decisão para organizar o código inicial foi coloca-lo em uma nova Gem, o intuito inicial era apenas usar alguma Gem para testes automáticos, mas depois gostei da idéia de publicar o código numa conta pública, além de forçar a organização inicial.
+
+### Frontend
+
+**[ANSI Color codes](https://en.wikipedia.org/wiki/ANSI_escape_code)**: Para melhorar a interface com o usuário, resolvi adotar cores e criar um simulador para a jogada do computador, porém essa parte especificamente deveria estar mais isolada do código, esta muito misturado com a lógica do jogo, como melhoria da organização, separaria toda interface até para implementar internacionalização ou customizações de cores por parte do usuário.
+
+### Testes
+
+**[RSpec](http://rspec.info/)**: Toda a estrutura criada para as peças e jogadores estão cobertas, única entidade que ficou faltando cobrir foi o jogo em si (`game.rb`), fator que determinou a não publicação do código em produção no momento.
+
+## Conclusão
+
+Apesar de não ter concluído o teste como gostaria, aprendi diversos conceitos que a linguagem proporciona e que não tinha reparado nos projetos [Rails](http://rubyonrails.org/) que havia desenvolvido anteriormente. Outro ponto positivo deste trabalho foi o primeiro contato com ferramentas de testes automatizados para a linguagem, sem dúvida este foi o tópico que mais dediquei meu tempo e graças a esta dedicação encontrei alguns bugs que iriam passar desapercebido. Continuo feliz no estudo da linguagem, sinal que continuará sendo minha fonte de estudos atual.
+
+**VAMOS QUE VAMOS!** :muscle:
