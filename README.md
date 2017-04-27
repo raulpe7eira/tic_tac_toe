@@ -41,7 +41,7 @@ $ rspec
 
 ### Ambiente de produção
 
-`Os testes precisam ser finalizados para geração de uma gem pública` :disappointed_relieved:
+`Os testes precisam ser finalizados para geração de uma Gem pública` :disappointed_relieved:
 
 ## Considerações
 
