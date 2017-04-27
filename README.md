@@ -59,7 +59,7 @@ $ rspec
 
 ### Testes
 
-**[RSpec](http://rspec.info/)**: Toda a estrutura criada para as peças e jogadores estão cobertas, única entidade que ficou faltando cobrir foi o jogo em si (`game.rb`), fator que determinou a não publicação do código em produção no momento.
+**[RSpec](http://rspec.info/)**: Toda a estrutura criada para as peças e jogadores foi coberta, única entidade que ficou faltando cobrir foi o jogo em si - `game.rb` - fator que determinou a não publicação do código em produção no momento.
 
 ## Conclusão
 
