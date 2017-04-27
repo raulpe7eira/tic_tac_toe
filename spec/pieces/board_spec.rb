@@ -27,14 +27,15 @@ RSpec.describe TicTacToe::Piece::Board do
   context '#paint' do
     it 'puts initial board' do
       board = TicTacToe::Piece::Board.new
-      expect { board.paint }.to output(
-        "\e[1;30m\u2022\e[m Board: "\
-        " 0\e[1;30m | \e[m1\e[1;30m | \e[m2\n         "\
-        "\e[1;30m===+===+===\e[m\n         "\
-        " 3\e[1;30m | \e[m4\e[1;30m | \e[m5\n         "\
-        "\e[1;30m===+===+===\e[m\n         "\
-        " 6\e[1;30m | \e[m7\e[1;30m | \e[m8\n"
-      ).to_stdout
+      expect { board.paint }
+        .to output(
+          "\e[1;30m\u2022\e[m Board: "\
+          " 0\e[1;30m | \e[m1\e[1;30m | \e[m2\n         "\
+          "\e[1;30m===+===+===\e[m\n         "\
+          " 3\e[1;30m | \e[m4\e[1;30m | \e[m5\n         "\
+          "\e[1;30m===+===+===\e[m\n         "\
+          " 6\e[1;30m | \e[m7\e[1;30m | \e[m8\n")
+        .to_stdout
     end
   end
 
